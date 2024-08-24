@@ -1,0 +1,12 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="viewport" content="width=device-width"><meta name="generator" content="Astro v4.14.5"><title>Autos</title><link rel="stylesheet" href="/_astro/index.BMTRAcdn.css"><script type="module">async function n(){const o=await(await fetch("https://ingenious-jaguar-f974f7.instawp.xyz/wp-json/wp/v2/autos?acf_format=standard")).json(),r=document.getElementById("autos-list");if(o&&Array.isArray(o)&&o.length>0){const e=o.map(s=>`
+						<li key="${s.id}">
+							<h2>${s.title.rendered}</h2>
+							${s.imageUrl?`<img src="${s.imageUrl}" alt="${s.title.rendered}" />`:""}
+							<p style="color: ${s.acf.color}">Marca: ${s.acf.marca}</p>
+							<p><strong>Modelo:</strong> ${s.acf.modelo}</p>
+							<p><strong>Descripción:</strong> ${s.acf.descripcion}</p>
+							<p><strong>Color:</strong> <span style="color: ${s.acf.color}">${s.acf.color}</span></p>
+							${s.acf.foto?`<div><img src="${s.acf.foto}" alt="${s.acf.marca}" /></div>`:""}
+						</li>
+					`).join("");r.innerHTML=`<ul>${e}</ul>`}else r.innerHTML="<p>No se pudieron recuperar los datos o no hay autos disponibles.</p>"}n();
+</script></head> <body> <h1>Autos</h1> <div id="autos-list">Cargando autos...</div>  </body> </html>
